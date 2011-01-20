@@ -1,5 +1,8 @@
 Basecamp::Application.routes.draw do
-  resources :tickets
+
+  resources :tickets do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

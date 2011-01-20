@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th colspan="2"><u>Kickoff task (group of tickets)</u></th>
+    <th colspan="2"><h2>Kickoff task (group of tickets)</h2></th>
   </tr>
   
 <% @tickets.each do |ticket| %>
@@ -16,7 +16,7 @@
     <td></td>
     <td>
       <div class="mini_form">
-        <%= render "add_ticket" %>
+        <%= render "shared/add_ticket" %>
       </div>
     </td>
   </tr>

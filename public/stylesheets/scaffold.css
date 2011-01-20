@@ -7,6 +7,7 @@ body, p, ol, ul, td {
 }
 
 th, td {
+  vertical-align: top;
   text-align: left;
 }
 
@@ -16,8 +17,8 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; text-decoration: none; }
-a:visited { color: #666; }
+a { color: blue; text-decoration: none; }
+a:visited { color: red; }
 a:hover { text-decoration: underline; }
 
 div.field, div.actions {

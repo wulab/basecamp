@@ -1,0 +1,22 @@
+<table>
+
+  <tr>
+    <td>Ticket #<br /><%= ticket.id %></td>
+    <td>Status<br /><%= ticket.status %></td>
+    <td>Due date<br /><%= ticket.due_date %></td>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3">
+      <h1><%= ticket.name %></h1>
+      <p><%= simple_format ticket.description %></p>
+    </td>
+    <td>
+      <p>Opened <%= time_ago_in_words ticket.created_at.in_time_zone('Bangkok') %> ago by <%= ticket.opened_by || "anonymous" %></p>
+      <p><%= link_to 'Edit this ticket', edit_ticket_path(ticket) %></p>
+      <p><%= link_to 'Delete this ticket', ticket, :confirm => 'Are you sure?', :method => :delete %></p>
+    </td>
+  </tr>  
+  
+</table>

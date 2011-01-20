@@ -1,35 +1,5 @@
-<p id="notice"><%= notice %></p>
+<%= render @ticket %>
 
-<p>
-  <b>Name:</b>
-  <%= @ticket.name %>
-</p>
+<%= render @ticket.comments %>
 
-<p>
-  <b>Description:</b>
-  <%= @ticket.description %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @ticket.status %>
-</p>
-
-<p>
-  <b>Due date:</b>
-  <%= @ticket.due_date %>
-</p>
-
-<p>
-  <b>Assigned to:</b>
-  <%= @ticket.assigned_to %>
-</p>
-
-<p>
-  <b>Opened by:</b>
-  <%= @ticket.opened_by %>
-</p>
-
-
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', startpage_url %>
+<%= render "shared/add_comment" %>

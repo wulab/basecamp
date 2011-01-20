@@ -1,7 +1,9 @@
 class Ticket < ActiveRecord::Base
-  before_save :default_values
-  
+  has_many :comments, :as => :commentable
+
   validates :name, :presence => true
+  
+  before_save :default_values
   
   def default_values
     self.status = 'Open' unless self.status

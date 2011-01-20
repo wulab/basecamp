@@ -1,0 +1,10 @@
+<table>
+
+  <tr>
+    <th>Updated <%= time_ago_in_words comment.created_at.in_time_zone('Bangkok') %> by <%= comment.author || "anonymous" %> | <span style="font-weight: normal"><%= link_to 'Delete this comment', [@ticket, comment], :method => :delete %></span></th>
+  </tr>
+  <tr>
+    <td><%= simple_format comment.description %></td>
+  </tr>
+
+</table>
