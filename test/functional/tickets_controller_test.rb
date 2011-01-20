@@ -21,7 +21,7 @@ class TicketsControllerTest < ActionController::TestCase
       post :create, :ticket => @ticket.attributes
     end
 
-    assert_redirected_to ticket_path(assigns(:ticket))
+    assert_redirected_to startpage_url
   end
 
   test "should show ticket" do
