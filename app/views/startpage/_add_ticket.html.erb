@@ -1,0 +1,25 @@
+<%= form_for(Ticket.new) do |f| %>
+<table>
+  <tr>
+    <td colspan="2">
+      <%= f.label :name, 'Enter a ticket name' %><br />
+      <%= f.text_field :name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.label :assigned_to %><br />
+      <%= f.text_field :assigned_to, :size => 10 %>
+    </td>
+    <td>
+      <%= f.label :due_date %><br />
+      <%= f.date_select :due_date, :discard_year => true %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.submit %>
+    </td>
+  </tr>
+</table>
+<% end %>

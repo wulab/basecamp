@@ -1,0 +1,2 @@
+module StartpageHelper
+end

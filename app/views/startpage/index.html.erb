@@ -1,0 +1,24 @@
+<h1>Ticket lists</h1>
+
+<table>
+  <tr>
+    <th colspan="2"><u>Kickoff task (group of tickets)</u></th>
+  </tr>
+  
+<% @tickets.each do |ticket| %>
+  <tr>
+    <td><input type="checkbox" /></td>
+    <td><%= link_to ticket.name, ticket %></td>
+  </tr>
+<% end %>
+  
+  <tr>
+    <td></td>
+    <td>
+      <div class="mini_form">
+        <%= render "add_ticket" %>
+      </div>
+    </td>
+  </tr>
+  
+</table>
