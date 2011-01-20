@@ -1,14 +1,16 @@
-<h1>Ticket lists</h1>
+<div id="content_title">
+  <h2>Task lists</h2>
+</div>
 
 <table>
   <tr>
-    <th colspan="2"><h2>Kickoff task (group of tickets)</h2></th>
+    <th colspan="2"><h3>Kickoff task (group of tickets)</h3></th>
   </tr>
   
 <% @tickets.each do |ticket| %>
   <tr>
     <td><input type="checkbox" /></td>
-    <td><%= link_to ticket.name, ticket %></td>
+    <td><div class="ticket"><%= link_to ticket.name, ticket %></div></td>
   </tr>
 <% end %>
   

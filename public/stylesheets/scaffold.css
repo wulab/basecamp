@@ -1,14 +1,9 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #e9f2f9; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
-}
-
-th, td {
-  vertical-align: top;
-  text-align: left;
 }
 
 pre {
@@ -17,7 +12,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: blue; text-decoration: none; }
+a { color: #3c8dc5; text-decoration: none; }
 a:visited { color: red; }
 a:hover { text-decoration: underline; }
 
@@ -58,10 +53,4 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
-}
-
-/* Styles for mini forms */
-
-.mini_form {
-  background: #eee;
 }
