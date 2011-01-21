@@ -1,9 +1,11 @@
 class TicketsController < ApplicationController
+  # TODO: This controller would help users find or filter tickets.
+
   # GET /tickets
   # GET /tickets.xml
   def index
     @tickets = Ticket.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tickets }
@@ -14,6 +16,7 @@ class TicketsController < ApplicationController
   # GET /tickets/1.xml
   def show
     @ticket = Ticket.find(params[:id])
+    session[:return_to] = request.referer
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +28,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new.xml
   def new
     @ticket = Ticket.new
+    session[:return_to] = request.referer
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,19 +39,21 @@ class TicketsController < ApplicationController
   # GET /tickets/1/edit
   def edit
     @ticket = Ticket.find(params[:id])
+    session[:return_to] = request.referer
   end
 
   # POST /tickets
   # POST /tickets.xml
   def create
     @ticket = Ticket.new(params[:ticket])
-
+    session[:return_to] = request.referer unless request.referer.include?('/tickets/new')
+    
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to(startpage_url, :notice => 'Ticket was successfully created.') }
+        format.html { redirect_to(session[:return_to], :notice => 'Ticket was successfully created.') }
         format.xml  { render :xml => @ticket, :status => :created, :location => @ticket }
       else
-        format.html { redirect_to(startpage_url) }
+        format.html { redirect_to(session[:return_to]) }
         format.xml  { render :xml => @ticket.errors, :status => :unprocessable_entity }
       end
     end
@@ -60,7 +66,7 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.update_attributes(params[:ticket])
-        format.html { redirect_to(@ticket, :notice => 'Ticket was successfully updated.') }
+        format.html { redirect_to(session[:return_to], :notice => 'Ticket was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -74,9 +80,10 @@ class TicketsController < ApplicationController
   def destroy
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
+    session[:return_to] = request.referer if request.referer.ends_with?('/tickets')
 
     respond_to do |format|
-      format.html { redirect_to(tickets_url) }
+      format.html { redirect_to(session[:return_to]) }
       format.xml  { head :ok }
     end
   end

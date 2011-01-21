@@ -13,7 +13,7 @@
     </td>
     <td>
       <%= f.label :due_date %><br />
-      <%= f.date_select :due_date, :discard_year => true %>
+      <%= f.date_select :due_date, :include_blank => true, :start_year => 1.year.ago.year %>
     </td>
   </tr>
   <tr>
