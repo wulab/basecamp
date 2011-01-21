@@ -20,9 +20,9 @@
   float: left;
   padding: 20px;
   
-  -webkit-box-shadow: 4px 4px 4px #ddd;
-  -moz-box-shadow: 4px 4px 4px #ddd;
-  box-shadow: 4px 4px 4px #ddd;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 #sidebar {
@@ -51,12 +51,12 @@
 }
 
 #nav li {
-  background: #e9f2f9;
+  background: #f5f2e9;
   color: #333;
   float: left;
   margin-right: 2px;
   height: 32px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 32px;
 }
 
@@ -81,6 +81,7 @@
 /* Styles for tables */
 
 th {
+
 }
 
 /* Styles for texts */
@@ -108,11 +109,7 @@ h3 {
 /* Styles for mini forms */
 
 .mini_form {
-  background: #eee;
+  background: #fff4c0;
   margin: 10px 0px;
   padding: 5px;
-  
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
 }
