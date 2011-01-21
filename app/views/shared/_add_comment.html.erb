@@ -1,0 +1,15 @@
+<%= form_for [@ticket, Comment.new] do |f| %>
+<table>
+  <tr>
+    <th>Add a comment</th>
+  </tr>
+  <tr>
+    <td>
+      <p>
+      <%= f.text_area :description, :size => "50x6" %>
+      </p>
+      <p><%= f.submit %></p>
+    </td>
+  </tr>
+</table>
+<% end %>

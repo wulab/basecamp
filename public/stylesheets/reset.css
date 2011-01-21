@@ -1,0 +1,23 @@
+/* Minimal CSS Reset */
+
+html, body, h1, h2, h3, h4, h5, h6, ul, li {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 1em;
+}
+
+body {
+	font-size: 100%;
+}
+
+a img, :link img, :visited img {
+	border: 0;
+}
+
+th, td {
+  vertical-align: top;
+  text-align: left;
+}
