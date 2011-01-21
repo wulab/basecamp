@@ -1,4 +1,6 @@
 class TicketsController < ApplicationController
+  # TODO: This controller would help users find or filter tickets.
+
   # GET /tickets
   # GET /tickets.xml
   def index
@@ -44,10 +46,10 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to(startpage_url, :notice => 'Ticket was successfully created.') }
+        format.html { redirect_to(tasks_index_url, :notice => 'Ticket was successfully created.') }
         format.xml  { render :xml => @ticket, :status => :created, :location => @ticket }
       else
-        format.html { redirect_to(startpage_url) }
+        format.html { redirect_to(edit_ticket_url) }
         format.xml  { render :xml => @ticket.errors, :status => :unprocessable_entity }
       end
     end
@@ -76,7 +78,7 @@ class TicketsController < ApplicationController
     @ticket.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tickets_url) }
+      format.html { redirect_to(tasks_index_url) }
       format.xml  { head :ok }
     end
   end
