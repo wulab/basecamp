@@ -51,18 +51,24 @@
 }
 
 #nav li {
+  background: #e9f2f9;
+  color: #333;
   float: left;
   margin-right: 2px;
   height: 32px;
+  font-size: 1.2em;
   line-height: 32px;
-  background: #357EB0;
+}
+
+#nav .active {
+  padding: 0 20px;
 }
 
 #nav li a {
-  text-decoration: none;
+  background: #357EB0;
   color: #fff;
   display: block;
-  font-size: 1.1em;
+  text-decoration: none;
   padding: 0 20px;
   outline: none;
 }
@@ -70,14 +76,6 @@
 #nav li a:hover {
   background: #b2d1e5;
   color: #333;
-}
-
-#nav li.active a {
-  color: #333;
-}
-
-#nav li.active, #nav li.active a:hover {
-  background: #e9f2f9;
 }
 
 /* Styles for tables */

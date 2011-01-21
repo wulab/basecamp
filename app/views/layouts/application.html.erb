@@ -13,8 +13,8 @@
   
   <div id="nav">
     <ul>
-      <li><%= link_to 'Dashboard', dashboard_path %></li>
-      <li class="active"><%= link_to 'Tasks', tasks_index_path %></li>
+      <li><%= link_to_unless_current('Dashboard', dashboard_path) { '<div class="active">Dashboard</div>'.html_safe } %></li>
+      <li><%= link_to_unless_current('Tasks', tasks_index_path) { '<div class="active">Tasks</div>'.html_safe } %></li>
     </ul>
   </div>
 </div>
@@ -26,7 +26,7 @@
   </div>
   
   <div id="sidebar">
-    <div class="large blue button">
+    <div class="large green button">
       &plus; Add new task
     </div>
   </div>
