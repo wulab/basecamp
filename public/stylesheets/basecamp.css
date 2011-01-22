@@ -1,5 +1,9 @@
 /* Styles for page layout */
 
+body {
+  background-color: #F0EEE1;
+}
+
 #header {
   background: #3c8dc5;
   height: 80px;
@@ -15,7 +19,7 @@
 }
 
 #content {
-  background: #fff;
+  background: #FFFFFA;
   width: 740px;
   float: left;
   padding: 20px;
@@ -51,7 +55,7 @@
 }
 
 #nav li {
-  background: #f5f2e9;
+  background: #F0EEE1;
   color: #333;
   float: left;
   margin-right: 2px;
