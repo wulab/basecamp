@@ -2,6 +2,7 @@ require 'test_helper'
 
 class TicketsControllerTest < ActionController::TestCase
   setup do
+    @request.env['HTTP_REFERER'] = tickets_url
     @ticket = tickets(:one)
   end
 
@@ -21,7 +22,7 @@ class TicketsControllerTest < ActionController::TestCase
       post :create, :ticket => @ticket.attributes
     end
 
-    assert_redirected_to startpage_url
+    assert_redirected_to tickets_path
   end
 
   test "should show ticket" do
@@ -35,8 +36,9 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test "should update ticket" do
+    get :edit, :id => @ticket.to_param
     put :update, :id => @ticket.to_param, :ticket => @ticket.attributes
-    assert_redirected_to ticket_path(assigns(:ticket))
+    assert_redirected_to tickets_path
   end
 
   test "should destroy ticket" do

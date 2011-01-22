@@ -80,7 +80,7 @@ class TicketsController < ApplicationController
   def destroy
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
-    session[:return_to] = request.referer if request.referer.ends_with?('/tickets')
+    session[:return_to] = request.referer if request.referer.end_with?('/tickets')
 
     respond_to do |format|
       format.html { redirect_to(session[:return_to]) }
