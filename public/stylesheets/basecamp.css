@@ -82,13 +82,7 @@ body {
   color: #333;
 }
 
-/* Styles for tables */
-
-th {
-
-}
-
-/* Styles for texts */
+/* Styles for basic elements */
 
 h1, h2 {
   padding-bottom: 20px;
@@ -102,12 +96,64 @@ h3 {
   padding-bottom: 10px;
 }
 
+p {
+  padding-bottom: 10px;
+}
+
 .light {
   color: #fff;
 }
 
-.ticket a {
+/* Styles for tables */
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  
+}
+
+th {
+  
+}
+
+td a {
   color: #333;
+}
+
+.show_border, show_border th, .show_border td,
+.show_border th+th, .show_border td+td {
+  border: 1px solid #ddd;
+}
+
+.ticket th, .ticket td {
+  padding: 10px;
+}
+
+.ticket th {
+  background-color: #F3F0EB;
+  color: #666;
+  font-weight: normal;
+}
+
+.ticket th.actions {
+  width: 25%;
+}
+
+.comment th {
+  padding: 5px 10px; 
+}
+
+.comment td {
+  padding: 10px;
+}
+
+.comment th {
+  background-color: #F3F0EB;
+  color: #666;
+  font-weight: normal; 
 }
 
 /* Styles for mini forms */
