@@ -1,35 +1,17 @@
 <div id="content_title">
-  <h2>Tickets</h2>
+  <h2>Ticket lists</h2>
 </div>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Due date</th>
-    <th>Assigned to</th>
-    <th>Opened by</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="2"><h3>Filtered tickets</h3></th>
   </tr>
-
+  
 <% @tickets.each do |ticket| %>
   <tr>
-    <td><%= ticket.name %></td>
-    <td><%= ticket.description %></td>
-    <td><%= ticket.status %></td>
-    <td><%= ticket.due_date %></td>
-    <td><%= ticket.assigned_to %></td>
-    <td><%= ticket.opened_by %></td>
-    <td><%= link_to 'Show', ticket %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td><%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><input type="checkbox" /></td>
+    <td><%= link_to ticket.name, ticket %></td>
   </tr>
 <% end %>
+  
 </table>
-
-<br />
-
-<%= link_to 'New Ticket', new_ticket_path %>

@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <input type="hidden" name="redirect_to" value="<%= @ticket.new_record? ? URI.parse(request.referer).path : ticket_path(@ticket) %>" />
+  
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -36,6 +38,6 @@
     <%= f.text_field :opened_by %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %> or <%= link_to 'Cancel', :back %>
   </div>
 <% end %>

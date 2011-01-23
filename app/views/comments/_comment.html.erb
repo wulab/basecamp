@@ -1,4 +1,4 @@
-<table>
+<table class="comment show_border">
 
   <tr>
     <th>Updated <%= time_ago_in_words comment.created_at.in_time_zone('Bangkok') %> ago by <%= comment.author || "anonymous" %> <%= link_to 'Delete', [@ticket, comment], :method => :delete, :class => "small grey button" %></th>
