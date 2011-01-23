@@ -10,17 +10,13 @@
 <% @tickets.each do |ticket| %>
   <tr>
     <td><input type="checkbox" /></td>
-    <td><div class="ticket"><%= link_to ticket.name, ticket %></div></td>
+    <td><%= link_to ticket.name, ticket %></td>
   </tr>
 <% end %>
   
   <tr>
     <td></td>
-    <td>
-      <div class="mini_form">
-        <%= render "shared/add_ticket" %>
-      </div>
-    </td>
+    <td><div class="mini_form"><%= render "shared/add_ticket" %></div></td>
   </tr>
   
 </table>

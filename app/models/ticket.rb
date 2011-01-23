@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+  belongs_to :task
   has_many :comments, :as => :commentable
 
   validates :name, :presence => true

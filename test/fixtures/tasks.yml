@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  budget: 9.99
+  cost: 9.99
+
+two:
+  name: MyString
+  description: MyText
+  budget: 9.99
+  cost: 9.99

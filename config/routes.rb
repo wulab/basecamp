@@ -1,12 +1,18 @@
 Basecamp::Application.routes.draw do
 
   get "dashboard/index"
-
-  get "tasks/index"
+  get "tasks/admin"
+  get "tickets/admin"
+  
+  resources :tasks do
+    resources :tickets
+  end
 
   resources :tickets do
     resources :comments
   end
+  
+  resources :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
