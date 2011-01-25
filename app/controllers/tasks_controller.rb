@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
+    @tasks = Task.all
     @tickets = Ticket.order("created_at")
 
     respond_to do |format|

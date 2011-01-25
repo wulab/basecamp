@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.xml
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.order(:created_at).reverse
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,6 +33,7 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   # GET /tickets/new.xml
   def new
+    @task = Task.find(params[:task_id])
     @ticket = Ticket.new
     
     respond_to do |format|
@@ -49,7 +50,8 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.xml
   def create
-    @ticket = Ticket.new(params[:ticket])
+    @task = Task.find(params[:task_id])
+    @ticket = @task.tickets.build(params[:ticket])
     
     respond_to do |format|
       if @ticket.save

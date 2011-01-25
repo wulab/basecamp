@@ -1,0 +1,24 @@
+<table class="task <%= cycle "odd", "even" %>">
+  <tr>
+    <th colspan="2"><h3><%= link_to task.name, task %></h3></th>
+  </tr>
+  
+  <tr>
+    <td colspan="2" class="budget_summary">
+      <p>Budget left: <%= number_to_currency(task.budget - task.cost) %></p>
+    </td>
+  </tr>
+  
+<% task.tickets.each do |ticket| %>
+  <tr class="ticket_row">
+    <td><input type="checkbox" /></td>
+    <td><%= link_to ticket.name, ticket %></td>
+  </tr>
+<% end %>
+  
+  <tr>
+    <td></td>
+    <td><%= render :partial => "shared/add_ticket", :locals => {:task => task} %></td>
+  </tr>
+  
+</table>

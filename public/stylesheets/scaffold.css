@@ -12,7 +12,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #3c8dc5; text-decoration: none; }
+a { color: #333; text-decoration: none; }
 a:visited { color: red; }
 a:hover { text-decoration: underline; }
 

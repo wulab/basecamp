@@ -2,21 +2,6 @@
   <h2>Task lists</h2>
 </div>
 
-<table>
-  <tr>
-    <th colspan="2"><h3>Kickoff task (group of tickets)</h3></th>
-  </tr>
-  
-<% @tickets.each do |ticket| %>
-  <tr>
-    <td><input type="checkbox" /></td>
-    <td><%= link_to ticket.name, ticket %></td>
-  </tr>
+<% for task in @tasks %>
+  <%= render :partial => "task_with_form", :locals => {:task => task} %>
 <% end %>
-  
-  <tr>
-    <td></td>
-    <td><div class="mini_form"><%= render "shared/add_ticket" %></div></td>
-  </tr>
-  
-</table>

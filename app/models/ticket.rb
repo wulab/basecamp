@@ -7,6 +7,7 @@ class Ticket < ActiveRecord::Base
   before_save :default_values
   
   def default_values
-    self.status = 'Open' unless self.status
+    self.opened_by = 'anonymous' unless self.opened_by.present?
+    self.status = 'Open' unless self.status.present?
   end
 end

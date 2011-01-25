@@ -1,0 +1,37 @@
+<table class="ticket show_border">
+
+  <tr>
+    <th>Task #<br /><b><%= task.id %></b></th>
+    <th>Total budget<br /><b><%= number_to_currency(task.budget) %></b></th>
+    <th>Total cost<br /><b><%= number_to_currency(task.cost) %></b></th>
+    <th class="actions"></th>
+  </tr>
+  
+  <tr>
+    <td colspan="3">
+      <h2><%= task.name %></h2>
+      <p><%= simple_format task.description %></p>
+    </td>
+    <td>
+      <p><%= link_to 'Edit this task', edit_task_path(task), :class => "small grey button" %></p>
+      <p><%= link_to 'Delete this task', task, :confirm => 'Are you sure?', :method => :delete, :class => "small grey button" %></p>
+    </td>
+  </tr>
+  
+  <tr>
+    <th colspan="4"><%= link_to '+ Add new ticket', new_task_ticket_path(task), :class => "small green button" %></th>
+  </tr>
+  
+<% task.tickets.each do |ticket| %>
+  <tr>
+    <td colspan="3"><input type="checkbox" /> <%= link_to ticket.name, ticket %></td>
+    <td class="total"><%= number_to_currency(0) %></td>
+  </tr>
+<% end %>
+  
+  <tr>
+    <td colspan="3" class="subtotal"><b>Total cost</b></td>
+    <td class="subtotal"><b><%= number_to_currency(task.cost) %></b></td>
+  </tr>
+  
+</table>

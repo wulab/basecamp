@@ -119,14 +119,29 @@ th {
   
 }
 
-td a {
-  color: #333;
-}
-
 .show_border, show_border th, .show_border td,
 .show_border th+th, .show_border td+td {
   border: 1px solid #ddd;
 }
+
+/* Styles for task tables */
+
+.task {
+  float: left;
+  width: 350px;
+  margin: 0 20px 20px 0;
+}
+
+.task.odd {
+  /* use with cycle() to fix alignment problem */
+  clear: left;
+}
+
+.task p {
+  padding-bottom: 10px;
+}
+
+/* Styles for ticket tables */
 
 .ticket th, .ticket td {
   padding: 10px;
@@ -138,9 +153,69 @@ td a {
   font-weight: normal;
 }
 
-.ticket th.actions {
+.ticket th b {
+  font-size: 14px;
+}
+
+.ticket .actions, .ticket .total {
   width: 25%;
 }
+
+.ticket .total, .ticket .subtotal {
+  text-align: right;
+}
+
+.ticket .subtotal {
+  background-color: #F3F0EB;
+}
+
+.ticket_row {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styles for filter tables */
+
+.filter {
+  table-collapse: separate;
+  border-collapse: separate;
+  border-spacing: 15px;
+  width: 100%;
+  background-color: #F3F0EB;
+}
+
+.filter td {
+  width: 200px;
+  height: 80px;
+  vertical-align: top;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.filter td p {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.filter td .button {
+  width: 80%;
+}
+
+/* Styles for filtered ticket tables */
+
+.filtered_tickets {
+  width: 100%;
+}
+
+.filtered_tickets th, .filtered_tickets td {
+  padding: 5px;
+}
+
+.filtered_tickets th {
+  background-color: #F3F0EB;
+}
+
+/* Styles for comment tables */
 
 .comment th {
   padding: 5px 10px; 
@@ -156,10 +231,14 @@ td a {
   font-weight: normal; 
 }
 
-/* Styles for mini forms */
+/* Styles for add-ticket form */
 
-.mini_form {
-  background: #fff4c0;
+.add_ticket {
+  /* background-color: #fff4c0; */
+  background-color: #F3F0EB;
   margin: 10px 0px;
+}
+
+.add_ticket th, .add_ticket td {
   padding: 5px;
 }
