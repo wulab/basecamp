@@ -132,7 +132,7 @@ th {
   margin: 0 20px 20px 0;
 }
 
-.task.odd {
+div.odd {
   /* use with cycle() to fix alignment problem */
   clear: left;
 }
@@ -237,8 +237,13 @@ th {
   /* background-color: #fff4c0; */
   background-color: #F3F0EB;
   margin: 10px 0px;
+  width: 100%;
 }
 
 .add_ticket th, .add_ticket td {
   padding: 5px;
+}
+
+.add_button_row {
+  margin: 5px 0px 0px 20px;
 }

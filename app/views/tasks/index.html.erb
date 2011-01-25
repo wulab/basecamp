@@ -3,5 +3,13 @@
 </div>
 
 <% for task in @tasks %>
+  <div id="task<%= task.id %>" class="<%= cycle 'odd', 'even' %>">
   <%= render :partial => "task_with_form", :locals => {:task => task} %>
+  </div>
 <% end %>
+
+<script type="text/javascript">
+  document.observe('dom:loaded', function() {
+    $$('form').invoke('hide');
+  });
+</script>

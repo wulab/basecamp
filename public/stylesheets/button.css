@@ -34,5 +34,5 @@
 .orange.button:hover							{ background-color: #d45500; }
 .yellow.button, .yellow.button:visited		{ background-color: #ffb515; }
 .yellow.button:hover							{ background-color: #fc9200; }
-.grey.button, .grey.button:visited		{ background-color: #D1D1D1; color: #777; }
-.grey.button:hover							{ }
+.grey.button, .grey.button:visited		{ background-color: #E0E0E0; color: #666; text-shadow: none; }
+.grey.button:hover							{ background-color: #D1D1D1; }
