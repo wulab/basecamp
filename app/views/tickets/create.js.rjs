@@ -1,2 +1,2 @@
 page.replace_html "task#{@task.id}", render(:partial => "tasks/task_with_form", :locals => {:task => @task})
-page[:current_ticket].visual_effect :highlight
+page["task#{@task.id}_last_ticket".to_sym].visual_effect :highlight
