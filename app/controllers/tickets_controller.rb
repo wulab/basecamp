@@ -56,7 +56,7 @@ class TicketsController < ApplicationController
     respond_to do |format|
       if @ticket.save
         format.html { redirect_to(params[:redirect_to] || :back, :notice => 'Ticket was successfully created.') }
-        format.js   { @current_ticket = @ticket }
+        format.js   { @last_ticket = @ticket }
         format.xml  { render :xml => @ticket, :status => :created, :location => @ticket }
       else
         format.html { redirect_to(params[:redirect_to] || :back) }

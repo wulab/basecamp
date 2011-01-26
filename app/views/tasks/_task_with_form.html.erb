@@ -10,8 +10,8 @@
   </tr>
   
 <% task.tickets.each do |ticket| %>
-  <% if ticket == @current_ticket %>
-  <tr id="current_ticket" class="ticket_row">
+  <% if ticket == @last_ticket %>
+  <tr id="task<%= task.id %>_last_ticket" class="ticket_row">
   <% else %>
   <tr class="ticket_row">
   <% end %>
