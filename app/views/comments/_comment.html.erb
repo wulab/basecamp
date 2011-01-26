@@ -1,7 +1,7 @@
-<table>
+<table class="comment show_border">
 
   <tr>
-    <th>Updated <%= time_ago_in_words comment.created_at.in_time_zone('Bangkok') %> by <%= comment.author || "anonymous" %> | <span style="font-weight: normal"><%= link_to 'Delete this comment', [@ticket, comment], :method => :delete %></span></th>
+    <th>Updated <%= time_ago_in_words comment.created_at.in_time_zone('Bangkok') %> ago by <%= comment.author || "anonymous" %> <%= link_to 'Delete', [@ticket, comment], :method => :delete, :class => "small grey button" %></th>
   </tr>
   <tr>
     <td><%= simple_format comment.description %></td>

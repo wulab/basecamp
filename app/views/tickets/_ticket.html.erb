@@ -1,10 +1,10 @@
-<table>
+<table class="ticket show_border">
 
   <tr>
-    <td>Ticket #<br /><%= ticket.id %></td>
-    <td>Status<br /><%= ticket.status %></td>
-    <td>Due date<br /><%= ticket.due_date %></td>
-    <td></td>
+    <th>Ticket #<br /><b><%= ticket.id %></b></th>
+    <th>Status<br /><b><%= ticket.status %></b></th>
+    <th>Due date<br /><b><%= ticket.due_date %></b></th>
+    <th class="actions"></th>
   </tr>
   
   <tr>
@@ -14,8 +14,8 @@
     </td>
     <td>
       <p>Opened <%= time_ago_in_words ticket.created_at.in_time_zone('Bangkok') %> ago by <%= ticket.opened_by || "anonymous" %></p>
-      <p><%= link_to 'Edit this ticket', edit_ticket_path(ticket) %></p>
-      <p><%= link_to 'Delete this ticket', ticket, :confirm => 'Are you sure?', :method => :delete %></p>
+      <p><%= link_to 'Edit this ticket', edit_ticket_path(ticket), :class => "small grey button" %></p>
+      <p><%= link_to 'Delete this ticket', ticket, :confirm => 'Are you sure?', :method => :delete, :class => "small grey button" %></p>
     </td>
   </tr>  
   

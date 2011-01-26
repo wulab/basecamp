@@ -4,6 +4,7 @@ class TicketsControllerTest < ActionController::TestCase
   setup do
     @request.env['HTTP_REFERER'] = tickets_url
     @ticket = tickets(:one)
+    @task = tasks(:one)
   end
 
   test "should get index" do
@@ -13,13 +14,13 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :task_id => @task.to_param
     assert_response :success
   end
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
-      post :create, :ticket => @ticket.attributes
+      post :create, :ticket => @ticket.attributes, :task_id => @task.to_param
     end
 
     assert_redirected_to tickets_path

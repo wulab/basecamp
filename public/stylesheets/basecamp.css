@@ -1,5 +1,9 @@
 /* Styles for page layout */
 
+body {
+  background-color: #F0EEE1;
+}
+
 #header {
   background: #3c8dc5;
   height: 80px;
@@ -15,7 +19,7 @@
 }
 
 #content {
-  background: #fff;
+  background: #FFFFFA;
   width: 740px;
   float: left;
   padding: 20px;
@@ -51,7 +55,7 @@
 }
 
 #nav li {
-  background: #f5f2e9;
+  background: #F0EEE1;
   color: #333;
   float: left;
   margin-right: 2px;
@@ -78,13 +82,7 @@
   color: #333;
 }
 
-/* Styles for tables */
-
-th {
-
-}
-
-/* Styles for texts */
+/* Styles for basic elements */
 
 h1, h2 {
   padding-bottom: 20px;
@@ -98,18 +96,154 @@ h3 {
   padding-bottom: 10px;
 }
 
+p {
+  padding-bottom: 10px;
+}
+
 .light {
   color: #fff;
 }
 
-.ticket a {
-  color: #333;
+/* Styles for tables */
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-/* Styles for mini forms */
+th, td {
+  
+}
 
-.mini_form {
-  background: #fff4c0;
-  margin: 10px 0px;
+th {
+  
+}
+
+.show_border, show_border th, .show_border td,
+.show_border th+th, .show_border td+td {
+  border: 1px solid #ddd;
+}
+
+/* Styles for task tables */
+
+.task {
+  float: left;
+  width: 350px;
+  margin: 0 20px 20px 0;
+}
+
+div.odd {
+  /* use with cycle() to fix alignment problem */
+  clear: left;
+}
+
+.task p {
+  padding-bottom: 10px;
+}
+
+/* Styles for ticket tables */
+
+.ticket th, .ticket td {
+  padding: 10px;
+}
+
+.ticket th {
+  background-color: #F3F0EB;
+  color: #666;
+  font-weight: normal;
+}
+
+.ticket th b {
+  font-size: 14px;
+}
+
+.ticket .actions, .ticket .total {
+  width: 25%;
+}
+
+.ticket .total, .ticket .subtotal {
+  text-align: right;
+}
+
+.ticket .subtotal {
+  background-color: #F3F0EB;
+}
+
+.ticket_row {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styles for filter tables */
+
+.filter {
+  table-collapse: separate;
+  border-collapse: separate;
+  border-spacing: 15px;
+  width: 100%;
+  background-color: #F3F0EB;
+}
+
+.filter td {
+  width: 200px;
+  height: 80px;
+  vertical-align: top;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.filter td p {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.filter td .button {
+  width: 80%;
+}
+
+/* Styles for filtered ticket tables */
+
+.filtered_tickets {
+  width: 100%;
+}
+
+.filtered_tickets th, .filtered_tickets td {
   padding: 5px;
+}
+
+.filtered_tickets th {
+  background-color: #F3F0EB;
+}
+
+/* Styles for comment tables */
+
+.comment th {
+  padding: 5px 10px; 
+}
+
+.comment td {
+  padding: 10px;
+}
+
+.comment th {
+  background-color: #F3F0EB;
+  color: #666;
+  font-weight: normal; 
+}
+
+/* Styles for add-ticket form */
+
+.add_ticket {
+  /* background-color: #fff4c0; */
+  background-color: #F3F0EB;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.add_ticket th, .add_ticket td {
+  padding: 5px;
+}
+
+.add_button_row {
+  margin: 5px 0px 0px 20px;
 }

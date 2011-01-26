@@ -12,11 +12,7 @@
   <h1 class="light">Project name</h1>
   
   <div id="nav">
-    <ul>
-      <li><%= link_to_unless(controller.controller_name == 'dashboard', 'Dashboard', dashboard_path) { '<div class="active">Dashboard</div>'.html_safe } %></li>
-      <li><%= link_to_unless(controller.controller_name == 'tasks', 'Tasks', tasks_index_path) { '<div class="active">Tasks</div>'.html_safe } %></li>
-      <li><%= link_to_unless(controller.controller_name == 'tickets', 'Tickets', tickets_path) { '<div class="active">Tickets</div>'.html_safe } %></li>
-    </ul>
+    <%= render "shared/navigation" %>
   </div>
 </div>
 
@@ -27,12 +23,11 @@
   </div>
   
   <div id="sidebar">
-    <div class="large green button">
-      + Add new task
-    </div>
+    <p><%= link_to '+ Add new task', new_task_path, :class => "large green button" %></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 
-  <div style="clear:both"></div>
+  <div style="clear:both;"></div>
 </div>
 
 </body>

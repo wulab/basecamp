@@ -1,35 +1,46 @@
 <div id="content_title">
-  <h2>Tickets</h2>
+  <h2>Ticket lists</h2>
 </div>
 
-<table>
+<h3>Filtered tickets</h3>
+
+<table class="filter show_border">
+  <tr>
+    <td>
+      <p>Find all tickets that have not done yet.</p>
+      <div><%= link_to 'Open', tickets_path(:filter => "open"), :class => "large blue button" %></div>
+    </td>
+    <td>
+      <p>Find all tickets that are already finished.</p>
+      <div><%= link_to 'Resolved', tickets_path(:filter => "resolved"), :class => "large blue button" %></div>
+    </td>
+    <td>
+      <p>Find all tickets that are assigned to current user.</p>
+      <div><%= link_to 'Assigned to me', tickets_path(:filter => "assigned_to_me"), :class => "large blue button" %></div>
+    </td>
+  </tr>
+</table>
+
+<table class="filtered_tickets show_border">
   <tr>
     <th>Name</th>
-    <th>Description</th>
     <th>Status</th>
     <th>Due date</th>
     <th>Assigned to</th>
     <th>Opened by</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @tickets.each do |ticket| %>
   <tr>
-    <td><%= ticket.name %></td>
-    <td><%= ticket.description %></td>
+    <td><%= link_to ticket.name, ticket %></td>
     <td><%= ticket.status %></td>
     <td><%= ticket.due_date %></td>
     <td><%= ticket.assigned_to %></td>
     <td><%= ticket.opened_by %></td>
-    <td><%= link_to 'Show', ticket %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td><%= link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Edit', edit_ticket_path(ticket), :class => "small grey button" %></td>
+    <td><%= link_to 'Delete', ticket, :confirm => 'Are you sure?', :method => :delete, :class => "small grey button" %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Ticket', new_ticket_path %>

@@ -1,0 +1,34 @@
+<table class="task">
+  <tr>
+    <th><h3><%= link_to task.name, task %></h3></th>
+  </tr>
+  
+  <tr>
+    <td class="budget_summary">
+      <p>Budget left: <%= number_to_currency(task.budget - task.cost) %></p>
+    </td>
+  </tr>
+  
+<% task.tickets.each do |ticket| %>
+  <% if ticket == @current_ticket %>
+  <tr id="current_ticket" class="ticket_row">
+  <% else %>
+  <tr class="ticket_row">
+  <% end %>
+    <td><input type="checkbox" /> <%= link_to ticket.name, ticket %></td>
+  </tr>
+<% end %>
+
+  <tr>
+    <td>
+      <div class="add_button_row">
+        <%= link_to_function '▼ Add ticket', visual_effect(:toggle_slide, "task#{task.id}_form"), :class => "small green button" %>
+      </div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td><%= render :partial => "shared/add_ticket", :locals => {:task => task} %></td>
+  </tr>
+  
+</table>

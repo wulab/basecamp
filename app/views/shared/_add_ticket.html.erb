@@ -1,5 +1,5 @@
-<%= form_for(Ticket.new) do |f| %>
-<table>
+<%= form_for([task, Ticket.new], :html => {:id => "task#{task.id}_form"}, :remote => true) do |f| %>
+<table class="add_ticket">
   <tr>
     <td colspan="2">
       <%= f.label :name, 'Enter a ticket name' %><br />
